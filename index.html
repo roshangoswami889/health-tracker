@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Health Tracker</title>
+    <link rel="manifest" href="manifest.json">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+     <p style="color:white; font-size:12px;">Choose Theme</p>
+<div class="themeBox">
+   
+    <button onclick="setTheme('light')">☀️</button>
+    <button onclick="setTheme('dark')">💜</button>
+    <button onclick="setTheme('blue')">🌊</button>
+    <button onclick="setTheme('green')">💚</button>
+    <button onclick="setTheme('neon')">🌙</button>
+</div>
+    <h1>💧 Health Tracker</h1>
+
+    <!-- WATER CARD -->
+    <div class="card">
+        <p id="aiTip">💡 Tip: Start your day with water</p>
+        <p id="streakText">🔥 Streak: 0</p>
+        <p id="challengeText"></p>
+        <h3>💧 Water</h3>
+
+        <div class="circle">
+            <svg width="120" height="120">
+                <circle cx="60" cy="60" r="50" class="bg"></circle>
+                <circle cx="60" cy="60" r="50" class="progressCircle" id="circle"></circle>
+            </svg>
+            <div class="circle-text" id="count">0</div>
+        </div>
+
+        <div class="stats">
+            <p>🎯 Goal: <span id="goalText">8</span></p>
+            <p>📊 <span id="percentText">0%</span></p>
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <button onclick="addWater()">➕ Drink Water</button>
+
+        <input type="number" id="goalInput" placeholder="Set Goal">
+        <button onclick="setGoal()">Set Goal</button>
+        <button onclick="resetData()">🔄 Reset</button>
+    </div>
+
+    <!-- STEPS -->
+    <div class="card">
+        <h3>🚶 Steps</h3>
+        <input type="number" id="stepsInput" placeholder="Enter steps">
+        <button onclick="addSteps()">Add Steps</button>
+        <p id="stepsText">Steps: 0</p>
+    </div>
+
+    <!-- SLEEP -->
+    <div class="card">
+        <h3>😴 Sleep</h3>
+        <input type="number" id="sleepInput" placeholder="Hours slept">
+        <button onclick="addSleep()">Add Sleep</button>
+        <p id="sleepText">Sleep: 0 hrs</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="card">
+        <h3>📊 Weekly Stats</h3>
+        <div id="weeklyStats"></div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="card">
+    <h3>🏅 Achievements</h3>
+    <p id="badgeText">No badges yet</p>
+
+</div>
+<p id="scoreText">Score: 0</p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

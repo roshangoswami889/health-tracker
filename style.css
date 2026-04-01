@@ -1,0 +1,274 @@
+/* Reset */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    color: white;
+}
+
+/* Card style */
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    box-sizing: border-box;
+
+    color: white;
+}
+
+/* Inputs */
+.card input {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+/* Buttons */
+.card button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: none;
+
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    color: white;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+/* Hover effect */
+.card button:hover {
+    opacity: 0.9;
+}
+
+/* Text inside cards */
+.card p {
+    margin-top: 8px;
+}
+
+/* Progress bar */
+.progress {
+    width: 100%;
+    height: 12px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+}
+
+/* Chart */
+canvas {
+    width: 100% !important;
+    max-height: 200px;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 5px;
+}
+/* Circle container */
+.circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+
+/* Rotate SVG */
+.circle svg {
+    transform: rotate(-90deg);
+}
+
+/* Background circle */
+.bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.2);
+    stroke-width: 10;
+}
+
+/* Progress circle */
+.progressCircle {
+    fill: none;
+    stroke: #00f260;
+    stroke-width: 10;
+    stroke-linecap: round;
+
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+
+    transition: 0.5s;
+}
+
+/* Number inside circle */
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 24px;
+    font-weight: bold;
+}
+.progress {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 0, 0, 0.627);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(270deg, #00ff66, #0575e6, #00f260);
+    background-size: 400% 400%;
+
+    animation: gradientMove 4s ease infinite;
+
+    transition: width 0.5s ease;
+}
+
+/* Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
+}
+
+/* Glow effect */
+.progressCircle {
+    fill: none;
+    stroke: #00f260;
+    stroke-width: 10;
+    stroke-linecap: round;
+
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+
+    transition: 0.5s;
+
+    filter: drop-shadow(0 0 6px #00f260)
+            drop-shadow(0 0 12px #00f260);
+}
+/* Dark mode styles */
+.dark {
+    background: #0f172a;
+}
+
+.dark .card {
+    background: rgba(0,0,0,0.4);
+    color: white;
+}
+
+.dark body {
+    background: #0f172a;
+}
+
+/* Button style */
+.darkBtn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+/* Theme selector */
+.themeBox {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.themeBox button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* LIGHT */
+.light {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+.light .card {
+    background: white;
+    color: black;
+}
+
+/* DARK */
+.dark {
+    background: #0f172a;
+}
+
+.dark .card {
+    background: rgba(0,0,0,0.5);
+}
+
+/* BLUE */
+.blue {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+/* GREEN */
+.green {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+/* NEON */
+.neon {
+    background: black;
+}
+
+.neon .card {
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #00f260;
+    box-shadow: 0 0 10px #00f260;
+}
+body, .card {
+    transition: all 0.4s ease;
+}
