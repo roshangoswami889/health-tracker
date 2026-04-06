@@ -232,4 +232,44 @@ function updateScore() {
     if (count === goal) {
     alert("🎉 Goal Completed!");
 }
+    
+}
+setInterval(() => {
+    alert("💧 Time to drink water!");
+}, 3600000); // every 1 hour
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+function saveDay() {
+    history.push({
+        date: new Date().toLocaleDateString(),
+        water,
+        steps,
+        sleep
+    });
+    localStorage.setItem("history", JSON.stringify(history));
+}
+score = (water/goal)*40 + (steps/10000)*30 + (sleep/8)*30;
+let challenges = [
+  "Drink 8 glasses today 💧",
+  "Walk 5000 steps 🚶",
+  "Sleep 7+ hours 😴"
+];
+
+document.getElementById("challengeText").innerText =
+    challenges[Math.floor(Math.random() * challenges.length)];
+function playSound() {
+    let audio = new Audio("click.mp3");
+    audio.play();
+    addWater() {
+    playSound();
+}
+    let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    deferredPrompt = e;
+});
+
+function installApp() {
+    deferredPrompt.prompt();
+}
 }
